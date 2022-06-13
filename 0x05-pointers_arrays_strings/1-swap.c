@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * swap_int -check the code 
+ * swap_int - check the code. 
  * @a: is a pointer int type
  * @b: is a pointer int type
  * Return: Always 0.
