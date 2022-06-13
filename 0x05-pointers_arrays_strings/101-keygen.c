@@ -1,28 +1,38 @@
-#include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-/**
- * main - check the code.
- * 
- * Return: Always 0.
- */
-int main(void)
-{
-char seed[53] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-char password[22];
-int i, n, passw, complem;
-
-srand(time(0));
-
-for (i = 0; passw < 3566; i++)
-{
-n = rand() % 10;
-password[i] = seed[n];
-passw += password[i];
-}
-complem = 3566 - passw;
-password[i] = complem;
-printf("%s\n",  password);
-return (0);
-}
+#include <stdio.h>                                                                                                                               
+#include <stdlib.h>                                                                                                                              
+#include <time.h>                                                                                                                                
+                                                                                                                                                 
+/**                                                                                                                                              
+ * main -starting of the program                                                                                                                 
+ * Description: pass word                                                                                                                        
+ *                                                                                                                                               
+ * Return: always 0 for succes                                                                                                                   
+ */                                                                                                                                              
+                                                                                                                                                 
+int main(void)                                                                                                                                   
+{                                                                                                                                                
+        int a = 0;                                                                                                                               
+        int b, sum;                                                                                                                              
+        int pw[100];                                                                                                                             
+                                                                                                                                                 
+        sum = 0;                                                                                                                                 
+                                                                                                                                                 
+        srand(time(NULL));                                                                                                                       
+                                                                                                                                                 
+        while (a < 100)                                                                                                                          
+        {                                                                                                                                        
+                pw[a] = rand() % 78;                                                                                                             
+                sum += (pw[a] + '0');                                                                                                            
+                putchar(pw[a] + '0');                                                                                                            
+                if ((2772 - sum) - '0' < 78)                                                                                                     
+                {                                                                                                                                
+                        b = 2772 - sum - '0';                                                                                                    
+                        sum += b;                                                                                                                
+                        putchar(b + '0');                                                                                                        
+                        break;                                                                                                                   
+                }                                                                                                                                
+                a++;                                                                                                                             
+        }                                                                                                                                        
+                                                                                                                                                 
+        return (0);                                                                                                                              
+} 
