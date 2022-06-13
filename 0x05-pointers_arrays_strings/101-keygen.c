@@ -15,13 +15,13 @@ int i, n, passw, complem;
 
 srand(time(0));
 
-for (i = 0; passw < 2772; i++)
+for (i = 0; passw < 3566; i++)
 {
 n = rand() % 10;
 password[i] = seed[n];
 passw += password[i];
 }
-complem = 2772 - passw;
+complem = 3566 - passw;
 password[i] = complem;
 printf("%s\n",  password);
 return (0);
