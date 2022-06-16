@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * _strcat - check the code.
+ * _strcat - check the code main.h.
  * @dest: is a pointer type char
  * @src: is a pointer type char
  * Return: Always 0.
