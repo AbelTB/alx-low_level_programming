@@ -1,46 +1,46 @@
+#include <stdio.h>
 #include <stdlib.h>
-
 /**
- * main - Prints coints left
- * @args: Paramater Entry
- * @argv: One number of argumets
- * Return: zero onOne number of argumetsr
- */
-
-int main(int args, char *argv[])
+* main - prints the minimum number of coins to make change for a given amount
+* @argc: arguement count
+* @argv: array of pointers to arguement strings
+* Return: number of coins or 1
+**/
+int main(int argc, char *argv[])
 {
-	int  c, coins = 0;
+	int amount, coins;
 
-	if (args != 2)
+	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	c = atoi(argv[1]);
-	if (c < 0)
+	amount = atoi(argv[1]);
+	coins = 0;
+	if (amount > 25)
 	{
-		printf("0\n");
-		return (0);
+		while (amount >= 25)
+			amount -= 25, coins++;
 	}
-	for (; c >= 0;)
+	if (amount > 10 && amount < 25)
 	{
-		if (c >= 25)
-			c -= 25;
-
-		else if (c >= 10)
-			c -= 10;
-
-		else if (c >= 5)
-			c -= 5;
-
-		else if (c >= 2)
-			c -= 2;
-
-		else if (c >= 1)
-			c -= 1;
-		else
-			break;
-		coins += 1;
+		while (amount >= 10)
+			amount -= 10, coins++;
+	}
+	if (amount > 5 && amount < 10)
+	{
+		while (amount >= 5)
+			amount -= 5, coins++;
+	}
+	if (amount > 2 && amount < 5)
+	{
+		while (amount >= 2)
+			amount -= 2, coins++;
+	}
+	if (amount == 1 || amount == 2 || amount == 5 ||
+	    amount == 10 || amount == 25)
+	{
+		coins++;
 	}
 	printf("%d\n", coins);
 	return (0);
