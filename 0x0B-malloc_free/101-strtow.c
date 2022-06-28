@@ -1,7 +1,6 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-
 /**
  * number - function to calculate number of words
  * @str: string being passed to check for words
@@ -36,7 +35,6 @@ void free_everything(char **string, int i)
 		free(string[--i]);
 	free(string);
 }
-
 /**
  * strtow - function that splits string into words
  * @str: string being passed
@@ -86,5 +84,5 @@ char **strtow(char *str)
 			str++;
 		}
 	}
-	return (words);
+return (words);
 }
